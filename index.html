@@ -1,388 +1,615 @@
-export default function MiyaarPlatform() {
-  const services = [
-    { title: "الاعتماد الصحي", desc: "دعم المنشآت الصحية للحصول على اعتماد CBAHI وJCI بأعلى المعايير.", icon: "🏥" },
-    { title: "إدارة الجودة", desc: "تطبيق أنظمة الجودة الطبية والصيدلانية وتحسين الأداء المؤسسي.", icon: "📊" },
-    { title: "التشغيل الطبي", desc: "تطوير الخطط التشغيلية وإدارة الموارد الطبية بكفاءة.", icon: "⚙️" },
-    { title: "الاستشارات الصيدلانية", desc: "حلول متكاملة للصيدليات والمستودعات الدوائية والامتثال التنظيمي.", icon: "💊" },
-    { title: "التدريب الصحي", desc: "برامج تدريبية متخصصة للكوادر الصحية والإدارية.", icon: "🎓" },
-    { title: "التفتيش والتقييم", desc: "عمليات تدقيق وتقييم احترافية لرفع جودة الخدمات الصحية.", icon: "✅" },
-  ];
-
-  const stats = [
-    { number: "+250", label: "منشأة صحية" },
-    { number: "+120", label: "مشروع جودة" },
-    { number: "+95%", label: "نسبة رضا العملاء" },
-    { number: "+15", label: "خبير واستشاري" },
-  ];
-
-  const resources = [
-    {
-      title: "دليل المنشآت الطبية",
-      desc: "الدليل الشامل لمتطلبات ترخيص وتشغيل المنشآت الطبية في المملكة.",
-      fileUrl: "https://drive.google.com/uc?export=download&id=1CpNpv4tisGB53sYE55jo7AjLGKz",
-      fileType: "PDF"
-    },
-    {
-      title: "دليل الاعتماد الصحي",
-      desc: "أحدث متطلبات الاعتماد الصحي للمنشآت الطبية في السعودية.",
-      fileUrl: "#",
-      fileType: "PDF"
-    },
-    {
-      title: "نماذج سياسات الجودة",
-      desc: "قوالب احترافية للسياسات والإجراءات الطبية والصيدلانية.",
-      fileUrl: "#",
-      fileType: "DOCX"
-    },
-    {
-      title: "أدلة مكافحة العدوى",
-      desc: "معايير وإرشادات مكافحة العدوى للمنشآت الصحية.",
-      fileUrl: "#",
-      fileType: "PDF"
-    },
-  ];
-
-  return (
-    <div className="font-[Tajawal] bg-white text-slate-700" dir="rtl">
-      {/* Navbar */}
-      <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100 shadow-sm">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="text-3xl font-black text-slate-800">
-            مِعيار<span className="text-yellow-500">.</span>
-          </div>
-
-          <div className="hidden md:flex gap-8 font-medium text-slate-700">
-            <a href="#home" className="hover:text-yellow-500 transition">الرئيسية</a>
-            <a href="#services" className="hover:text-yellow-500 transition">الخدمات</a>
-            <a href="#resources" className="hover:text-yellow-500 transition">الموارد</a>
-            <a href="#about" className="hover:text-yellow-500 transition">من نحن</a>
-            <a href="#contact" className="hover:text-yellow-500 transition">تواصل معنا</a>
-          </div>
-
-          <a
-            href="#contact"
-            className="bg-slate-800 text-white px-5 py-2 rounded-full hover:scale-105 transition"
-          >
-            استشارة مجانية
-          </a>
-        </div>
-      </nav>
-
-      {/* Hero */}
-      <section
-        id="home"
-        className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 text-white"
-      >
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute w-[700px] h-[700px] bg-yellow-400 rounded-full blur-3xl top-[-200px] left-[-150px] animate-pulse"></div>
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-6 py-28 grid lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <div className="inline-block bg-yellow-500/20 border-yellow-400/30 text-yellow-300 px-4 py-2 rounded-full mb-6 text-sm">
-              منصة د. علي زيد الغشمي للاستشارات الصحية
-            </div>
-
-            <h1 className="text-5xl md:text-6xl font-black leading-tight mb-6">
-              شريك الموثوق
-              <span className="text-yellow-400 block mt-2">
-                في التميز الصحي
-              </span>
-            </h1>
-
-            <p className="text-lg text-slate-300 leading-8 mb-8 max-w-2xl">
-              نقدم حلولًا احترافية للمنشآت الصحية والصيدلانية تشمل الجودة،
-              الاعتماد، التشغيل الطبي، التدريب، وإدارة الأداء وفق أعلى المعايير.
-            </p>
-
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="#contact"
-                className="bg-yellow-500 text-slate-900 px-8 py-4 rounded-2xl font-bold hover:scale-105 transition shadow-xl"
-              >
-                اطلب عرض سعر
-              </a>
-
-              <a
-                href="#services"
-                className="border border-white/30 px-8 py-4 rounded-2xl hover:bg-white/10 transition"
-              >
-                استعرض الخدمات
-              </a>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-5">
-            <div className="bg-white/10 backdrop-blur p-6 rounded-3xl border-white/10 shadow-2xl">
-              <div className="text-4xl mb-4">🏥</div>
-              <h3 className="text-2xl font-bold mb-2">اعتماد صحي</h3>
-              <p className="text-slate-300 text-sm leading-7">
-                تجهيز المنشآت الطبية للاعتماد المحلي والدولي.
-              </p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur p-6 rounded-3xl border-white/10 mt-10 shadow-2xl">
-              <div className="text-4xl mb-4">📋</div>
-              <h3 className="text-2xl font-bold mb-2">سياسات وإجراءات</h3>
-              <p className="text-slate-300 text-sm leading-7">
-                إعداد الأدلة التشغيلية وسياسات الجودة.
-              </p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur p-6 rounded-3xl border-white/10 shadow-2xl">
-              <div className="text-4xl mb-4">💊</div>
-              <h3 className="text-2xl font-bold mb-2">استشارات صيدلانية</h3>
-              <p className="text-slate-300 text-sm leading-7">
-                تطوير الأنظمة الدوائية وسلامة استخدام الأدوية.
-              </p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur p-6 rounded-3xl border-white/10 mt-10 shadow-2xl">
-              <div className="text-4xl mb-4">📈</div>
-              <h3 className="text-2xl font-bold mb-2">تحسين الأداء</h3>
-              <p className="text-slate-300 text-sm leading-7">
-                رفع كفاءة المنشآت الصحية وتحسين تجربة المرضى.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="bg-slate-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8 text-center">
-          {stats.map((item, index) => (
-            <div key={index} className="bg-white/5 rounded-3xl p-8 border-white/5">
-              <h3 className="text-5xl font-black text-yellow-400 mb-3">
-                {item.number}
-              </h3>
-              <p className="text-slate-300 text-lg">{item.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Services */}
-      <section id="services" className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-black text-slate-800 mb-4">
-              خدماتنا
-            </h2>
-            <p className="text-slate-500 text-lg max-w-2xl mx-auto leading-8">
-              حلول استشارية متقدمة مصممة خصيصًا للقطاع الصحي والصيدلاني.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-[30px] p-8 shadow-sm hover:shadow-2xl transition duration-300 border-slate-100 hover:-translate-y-2"
-              >
-                <div className="text-5xl mb-5">{service.icon}</div>
-                <h3 className="text-2xl font-bold text-slate-800 mb-4">
-                  {service.title}
-                </h3>
-                <p className="text-slate-600 leading-8">
-                  {service.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* About */}
-      <section id="about" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <img
-              src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop"
-              alt="Healthcare"
-              className="rounded-[35px] shadow-2xl w-full object-cover h-[500px]"
-            />
-          </div>
-
-          <div>
-            <div className="text-yellow-500 font-bold mb-4 text-lg">
-              من نحن
-            </div>
-
-            <h2 className="text-5xl font-black text-slate-800 leading-tight mb-6">
-              خبرة احترافية في تطوير القطاع الصحي
-            </h2>
-
-            <p className="text-slate-600 leading-9 text-lg mb-8">
-              نسعى في مِعيار إلى تمكين المنشآت الصحية والصيدلانية من الوصول
-              إلى أعلى مستويات الجودة والامتثال التشغيلي عبر حلول مبتكرة
-              واستشارات متخصصة يقودها خبراء في القطاع الصحي.
-            </p>
-
-            <div className="grid grid-cols-2 gap-5">
-              <div className="bg-slate-50 rounded-2xl p-5">
-                <h4 className="font-black text-slate-800 text-xl mb-2">
-                  رؤية واضحة
-                </h4>
-                <p className="text-slate-600 text-sm leading-7">
-                  بناء منظومة صحية أكثر كفاءة وجودة واستدامة.
-                </p>
-              </div>
-
-              <div className="bg-slate-50 rounded-2xl p-5">
-                <h4 className="font-black text-slate-800 text-xl mb-2">
-                  خبرات متخصصة
-                </h4>
-                <p className="text-slate-600 text-sm leading-7">
-                  فريق يضم خبراء في الجودة والاعتماد والتشغيل الطبي.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Resources */}
-      <section id="resources" className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-black text-slate-800 mb-4">
-              الموارد والأدلة
-            </h2>
-            <p className="text-slate-500 text-lg">
-              ملفات وأدلة احترافية لدعم المنشآت الصحية.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {resources.map((resource, index) => (
-              <div
-                key={index}
-                className="bg-white p-8 rounded-[30px] shadow-sm border-slate-100 hover:shadow-2xl transition"
-              >
-                <div className="text-4xl mb-5">📁</div>
-                <h3 className="text-2xl font-black text-slate-800 mb-4">
-                  {resource.title}
-                </h3>
-                <p className="text-slate-600 leading-8 mb-6">
-                  {resource.desc}
-                </p>
-
-                {resource.fileUrl!== "#"? (
-                  <a
-                    href={resource.fileUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-slate-800 text-white px-5 py-3 rounded-xl hover:bg-yellow-500 hover:text-slate-900 transition font-bold"
-                  >
-                    تحميل {resource.fileType}
-                  </a>
-                ) : (
-                  <button
-                    disabled
-                    className="bg-slate-200 text-slate-400 px-5 py-3 rounded-xl cursor-not-allowed"
-                  >
-                    قريباً
-                  </button>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact */}
-      <section id="contact" className="py-24 bg-slate-900 text-white">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-5xl font-black mb-6">
-            ابدأ رحلتك نحو التميز الصحي
-          </h2>
-
-          <p className="text-slate-300 text-lg leading-8 mb-12 max-w-3xl mx-auto">
-            تواصل معنا الآن للحصول على استشارة احترافية مخصصة لمنشأتك الصحية أو الصيدلانية.
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <div className="bg-white/5 border-white/10 rounded-3xl p-8">
-              <div className="text-4xl mb-4">📞</div>
-              <h3 className="text-xl font-bold mb-2">الهاتف</h3>
-              <p className="text-slate-300">771441367</p>
-            </div>
-
-            <div className="bg-white/5 border-white/10 rounded-3xl p-8">
-              <div className="text-4xl mb-4">✉️</div>
-              <h3 className="text-xl font-bold mb-2">البريد الإلكتروني</h3>
-              <p className="text-slate-300">dr.alighashmy@miyaar.sa</p>
-            </div>
-
-            <div className="bg-white/5 border-white/10 rounded-3xl p-8">
-              <div className="text-4xl mb-4">📍</div>
-              <h3 className="text-xl font-bold mb-2">الموقع</h3>
-              <p className="text-slate-300">المملكة العربية السعودية</p>
-            </div>
-          </div>
-
-          <form className="grid md:grid-cols-2 gap-5 text-right">
-            <input
-              type="text"
-              placeholder="الاسم الكامل"
-              className="bg-white/10 border-white/10 rounded-2xl p-4 outline-none focus:border-yellow-400"
-            />
-
-            <input
-              type="email"
-              placeholder="البريد الإلكتروني"
-              className="bg-white/10 border-white/10 rounded-2xl p-4 outline-none focus:border-yellow-400"
-            />
-
-            <input
-              type="text"
-              placeholder="اسم المنشأة"
-              className="bg-white/10 border-white/10 rounded-2xl p-4 outline-none focus:border-yellow-400 md:col-span-2"
-            />
-
-            <textarea
-              placeholder="اكتب تفاصيل طلبك"
-              rows="5"
-              className="bg-white/10 border-white/10 rounded-2xl p-4 outline-none focus:border-yellow-400 md:col-span-2"
-            ></textarea>
-
-            <button className="bg-yellow-500 text-slate-900 py-4 rounded-2xl font-black text-lg hover:scale-[1.02] transition md:col-span-2">
-              إرسال الطلب
-            </button>
-          </form>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-black text-slate-400 py-8 text-center border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-3xl font-black text-white mb-4">
-            مِعيار<span className="text-yellow-500">.</span>
-          </div>
-
-          <p className="mb-4">
-            جميع الحقوق محفوظة © 2026 - منصة مِعيار للاستشارات الصحية | د. علي زيد الغشمي
-          </p>
-
-          <div className="flex justify-center gap-6 text-sm">
-            <a href="#" className="hover:text-white transition">
-              سياسة الخصوصية
-            </a>
-            <a href="#" className="hover:text-white transition">
-              الشروط والأحكام
-            </a>
-          </div>
-        </div>
-      </footer>
-
-      {/* WhatsApp */}
-      <a
-        href="https://wa.me/966771441367"
-        className="fixed bottom-6 left-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition z-50"
-      >
-        💬
-      </a>
-    </div>
-  );
+<!DOCTYPE html><html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<titleمنصة معيار برو | ي</title>
+<meta name="description" content="منصة معيار برو للاستشارات الصحية والتراخيص الطبية وإدارة الجودة في اليمن" />
+<meta name="keywords" content="تراخيص طبية, جودة صحية, استشارات صحية, منشآت طبية, اليمن" />
+<meta property="og:title" content="منصة معيار برو" />
+<meta property="og:description" content="حلول متكاملة لتطوير وإدارة المنشآت الطبية" /><link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2966/2966486.png"><style>
+:root{
+    --primary:#0f4c5c;
+    --secondary:#c89b3c;
+    --light:#f5f7fa;
+    --dark:#1e293b;
+    --white:#fff;
+    --success:#1c9c62;
 }
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+    background:var(--light);
+    color:var(--dark);
+    line-height:1.8;
+}
+
+/* Navbar */
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:var(--primary);
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo{
+    color:var(--white);
+    font-size:1.5rem;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    gap:20px;
+}
+
+.nav-links a{
+    color:var(--white);
+    text-decoration:none;
+    transition:0.3s;
+    font-weight:500;
+}
+
+.nav-links a:hover{
+    color:var(--secondary);
+}
+
+.hero{
+    min-height:90vh;
+    background:linear-gradient(rgba(15,76,92,0.85), rgba(15,76,92,0.85)),
+    url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1400&auto=format&fit=crop') center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:30px;
+}
+
+.hero-content{
+    max-width:850px;
+    animation:fadeUp 1s ease;
+}
+
+.hero h1{
+    font-size:3.2rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+    cursor:pointer;
+    border:none;
+}
+
+.btn-primary{
+    background:var(--secondary);
+    color:white;
+}
+
+.btn-secondary{
+    background:var(--white);
+    color:var(--primary);
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    opacity:0.95;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:80px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    color:var(--primary);
+    font-size:2.2rem;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+.stats{
+    background:var(--primary);
+    color:white;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    text-align:center;
+}
+
+.stat-box{
+    background:rgba(255,255,255,0.08);
+    padding:30px;
+    border-radius:20px;
+}
+
+.stat-box h3{
+    font-size:2.5rem;
+    color:var(--secondary);
+}
+
+.forms-list{
+    list-style:none;
+}
+
+.forms-list li{
+    background:#f8fafc;
+    margin-bottom:15px;
+    padding:18px;
+    border-radius:12px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+}
+
+.testimonials{
+    background:#eef4f7;
+}
+
+.testimonial{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.06);
+}
+
+.testimonial p{
+    margin-bottom:15px;
+}
+
+.contact-box{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 4px 25px rgba(0,0,0,0.08);
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+input,select,textarea{
+    width:100%;
+    padding:14px;
+    border-radius:12px;
+    border:1px solid #d1d5db;
+    margin-top:8px;
+    font-family:inherit;
+}
+
+textarea{
+    min-height:140px;
+}
+
+footer{
+    background:var(--primary);
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.whatsapp-float{
+    position:fixed;
+    bottom:20px;
+    left:20px;
+    background:#25d366;
+    color:white;
+    width:60px;
+    height:60px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    font-size:1.6rem;
+    text-decoration:none;
+    box-shadow:0 6px 18px rgba(0,0,0,0.25);
+}
+
+.map-frame{
+    width:100%;
+    height:350px;
+    border:none;
+    border-radius:20px;
+}
+
+.toast{
+    position:fixed;
+    top:20px;
+    left:20px;
+    background:var(--success);
+    color:white;
+    padding:16px 25px;
+    border-radius:12px;
+    display:none;
+    z-index:9999;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.fade-in{
+    animation:fadeUp 1s ease;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2rem;
+}
+
+.hero p{
+    font-size:1rem;
+}
+
+.navbar{
+    flex-direction:column;
+    gap:15px;
+}
+
+.nav-links{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.forms-list li{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+}
+</style></head>
+<body><div class="toast" id="toast">تم إرسال الطلب بنجاح</div><nav class="navbar">
+    <div class="logo">معيار Pro</div><div class="nav-links">
+    <a href="#home">الرئيسية</a>
+    <a href="#services">الخدمات</a>
+    <a href="#forms">الاستمارات</a>
+    <a href="#experts">الخبراء</a>
+    <a href="#partners">الشركاء</a>
+    <a href="#contact">تواصل معنا</a>
+</div>
+
+</nav><section class="hero" id="home">
+    <div class="hero-content">
+        <h1>منصة معيار برو</h1>
+        <p>
+            منصة احترافية متكاملة للاستشارات الصحية والتراخيص الطبية وإدارة الجودة والاعتماد في اليمن.
+        </p><a href="#contact" class="btn btn-primary">ابدأ الآن</a>
+    <a href="#services" class="btn btn-secondary">استكشف الخدمات</a>
+</div>
+
+</section><section class="stats">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-box">
+                <h3>500+</h3>
+                <p>منشأة مخدومة</p>
+            </div><div class="stat-box">
+            <h3>120+</h3>
+            <p>خبير ومستشار</p>
+        </div>
+
+        <div class="stat-box">
+            <h3>22</h3>
+            <p>محافظة يمنية</p>
+        </div>
+
+        <div class="stat-box">
+            <h3>98%</h3>
+            <p>رضا العملاء</p>
+        </div>
+    </div>
+</div>
+
+</section><section id="services">
+    <div class="container"><div class="section-title">
+        <h2>خدماتنا الاحترافية</h2>
+    </div>
+
+    <div class="grid">
+
+        <div class="card fade-in">
+            <h3>التراخيص الطبية</h3>
+            <p>
+                إعداد وتجهيز ملفات التراخيص الطبية ومتابعة الاعتماد والتصنيف المهني.
+            </p>
+        </div>
+
+        <div class="card fade-in">
+            <h3>إدارة الجودة</h3>
+            <p>
+                أنظمة تقييم الجودة والتحسين المستمر وإعداد السياسات والإجراءات.
+            </p>
+        </div>
+
+        <div class="card fade-in">
+            <h3>التفتيش الصحي</h3>
+            <p>
+                نماذج تفتيش ذكية وتقارير احترافية للمنشآت الطبية والصيدليات والمختبرات.
+            </p>
+        </div>
+
+        <div class="card fade-in">
+            <h3>الاستشارات عن بعد</h3>
+            <p>
+                ربط المنشآت مع خبراء واستشاريين محليين ودوليين عبر الإنترنت.
+            </p>
+        </div>
+
+        <div class="card fade-in">
+            <h3>الهندسة الطبية</h3>
+            <p>
+                تجهيز المخططات الطبية واختيار الأجهزة والمعدات الطبية المناسبة.
+            </p>
+        </div>
+
+        <div class="card fade-in">
+            <h3>التدريب الصحي</h3>
+            <p>
+                دورات تدريبية وورش عمل للعاملين في القطاع الصحي والإداري.
+            </p>
+        </div>
+
+    </div>
+</div>
+
+</section><section id="forms">
+    <div class="container"><div class="section-title">
+        <h2>مكتبة الاستمارات الرقمية</h2>
+    </div>
+
+    <ul class="forms-list">
+
+        <li>
+            <div>
+                <h4>استمارة تقييم المنشآت الطبية</h4>
+                <p>نسخة احترافية للتقييم والتفتيش الميداني.</p>
+            </div>
+
+            <a class="btn btn-primary" href="#">تحميل PDF</a>
+        </li>
+
+        <li>
+            <div>
+                <h4>دليل التراخيص الصحية</h4>
+                <p>يشمل متطلبات الترخيص والتجديد.</p>
+            </div>
+
+            <a class="btn btn-primary" href="#">تحميل PDF</a>
+        </li>
+
+        <li>
+            <div>
+                <h4>نموذج إدارة الجودة</h4>
+                <p>سياسات وإجراءات الجودة الطبية.</p>
+            </div>
+
+            <a class="btn btn-primary" href="#">تحميل DOCX</a>
+        </li>
+
+    </ul>
+
+</div>
+
+</section><section class="testimonials">
+    <div class="container"><div class="section-title">
+        <h2>آراء العملاء</h2>
+    </div>
+
+    <div class="grid">
+
+        <div class="testimonial">
+            <p>
+                منصة احترافية ساعدتنا في تجهيز ملفات الترخيص وتحسين الجودة التشغيلية.
+            </p>
+            <strong>مستشفى خاص - صنعاء</strong>
+        </div>
+
+        <div class="testimonial">
+            <p>
+                الاستشارات كانت دقيقة والتنفيذ سريع جدًا.
+            </p>
+            <strong>مجمع طبي - تعز</strong>
+        </div>
+
+        <div class="testimonial">
+            <p>
+                أفضل منصة استشارية صحية تعاملنا معها حتى الآن.
+            </p>
+            <strong>صيدلية مركزية - عدن</strong>
+        </div>
+
+    </div>
+</div>
+
+</section><section id="partners">
+    <div class="container"><div class="section-title">
+        <h2>شركاء النجاح</h2>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>مستشفيات خاصة</h3>
+            <p>تعاون استراتيجي مع كبرى المنشآت الصحية.</p>
+        </div>
+
+        <div class="card">
+            <h3>خبراء دوليون</h3>
+            <p>شبكة استشاريين من عدة دول.</p>
+        </div>
+
+        <div class="card">
+            <h3>شركات تقنية</h3>
+            <p>حلول رقمية وإدارية متقدمة.</p>
+        </div>
+
+    </div>
+</div>
+
+</section><section id="experts">
+    <div class="container"><div class="section-title">
+        <h2>بوابة الخبراء</h2>
+    </div>
+
+    <div class="contact-box">
+
+        <div class="form-group">
+            <label>الاسم الكامل</label>
+            <input type="text" id="name" placeholder="أدخل الاسم الكامل">
+        </div>
+
+        <div class="form-group">
+            <label>التخصص</label>
+            <select id="speciality">
+                <option>إدارة الجودة والاعتماد</option>
+                <option>هندسة طبية</option>
+                <option>تراخيص طبية</option>
+                <option>إدارة مستشفيات</option>
+                <option>قانون صحي</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>سنوات الخبرة</label>
+            <input type="number" id="experience" placeholder="عدد سنوات الخبرة">
+        </div>
+
+        <div class="form-group">
+            <label>نبذة مختصرة</label>
+            <textarea id="details" placeholder="اكتب نبذة عن خبراتك"></textarea>
+        </div>
+
+        <button class="btn btn-primary" onclick="sendWhatsApp()">
+            إرسال الطلب عبر واتساب
+        </button>
+
+    </div>
+</div>
+
+</section><section id="contact">
+    <div class="container"><div class="section-title">
+        <h2>تواصل معنا</h2>
+    </div>
+
+    <div class="grid">
+
+        <div class="contact-box">
+            <h3>بيانات التواصل</h3>
+            <br>
+            <p><strong>المؤسس والمدير التنفيذي: د. علي الغشمي</strong></p>
+            <p>واتساب: 771441367</p>
+            <p>البريد الإلكتروني: example@email.com</p>
+            <p>صنعاء - الجمهورية اليمنية</p>
+            <br>
+
+            <a href="https://wa.me/967771441367" class="btn btn-primary">
+                تواصل مباشر
+            </a>
+        </div>
+
+        <div>
+            <iframe class="map-frame"
+            src="https://maps.google.com/maps?q=Sanaa&t=&z=13&ie=UTF8&iwloc=&output=embed">
+            </iframe>
+        </div>
+
+    </div>
+</div>
+
+</section><footer>
+    <h3>منصة معيار برو</h3>
+    <p>
+        جميع الحقوق محفوظة © 2026 - د. علي الغشمي
+    </p>
+</footer><a href="https://wa.me/967771441367" class="whatsapp-float">
+💬
+</a><script>
+function sendWhatsApp(){
+
+    let name = document.getElementById('name').value;
+    let speciality = document.getElementById('speciality').value;
+    let experience = document.getElementById('experience').value;
+    let details = document.getElementById('details').value;
+
+    if(name === '' || experience === ''){
+        alert('يرجى تعبئة البيانات المطلوبة');
+        return;
+    }
+
+    let message = `طلب انضمام جديد لمنصة معيار برو%0A%0Aالاسم: ${name}%0Aالتخصص: ${speciality}%0Aالخبرة: ${experience} سنة%0Aالتفاصيل: ${details}`;
+
+    document.getElementById('toast').style.display='block';
+
+    setTimeout(()=>{
+        document.getElementById('toast').style.display='none';
+    },3000);
+
+    window.open(`https://wa.me/967771441367?text=${message}`,'_blank');
+}
+</script></body>
+</html>
