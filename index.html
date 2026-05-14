@@ -1,329 +1,503 @@
-export default function MiyaarPlatform() { const services = [ { title: "الاعتماد الصحي", desc: "دعم المنشآت الصحية للحصول على اعتماد CBAHI وJCI بأعلى المعايير.", icon: "🏥", }, { title: "إدارة الجودة", desc: "تطبيق أنظمة الجودة الطبية والصيدلانية وتحسين الأداء المؤسسي.", icon: "📊", }, { title: "التشغيل الطبي", desc: "تطوير الخطط التشغيلية وإدارة الموارد الطبية بكفاءة.", icon: "⚙️", }, { title: "الاستشارات الصيدلانية", desc: "حلول متكاملة للصيدليات والمستودعات الدوائية والامتثال التنظيمي.", icon: "💊", }, { title: "التدريب الصحي", desc: "برامج تدريبية متخصصة للكوادر الصحية والإدارية.", icon: "🎓", }, { title: "التفتيش والتقييم", desc: "عمليات تدقيق وتقييم احترافية لرفع جودة الخدمات الصحية.", icon: "✅", }, ];
+<!DOCTYPE html><html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مِعيار | د. علي زيد الغشمي</title>
+  <meta name="description" content="منصة د. علي زيد الغشمي للاستشارات الصحية والجودة والاعتماد الصحي" />  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">  <style>
+    :root {
+      --primary: #0f172a;
+      --secondary: #fbbf24;
+      --light: #f8fafc;
+      --white: #ffffff;
+      --text: #334155;
+    }
 
-const stats = [ { number: "+250", label: "منشأة صحية" }, { number: "+120", label: "مشروع جودة" }, { number: "+95%", label: "نسبة رضا العملاء" }, { number: "+15", label: "خبير واستشاري" }, ];
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-const resources = [ { title: "دليل الاعتماد الصحي", desc: "أحدث متطلبات الاعتماد الصحي للمنشآت الطبية في السعودية.", }, { title: "نماذج سياسات الجودة", desc: "قوالب احترافية للسياسات والإجراءات الطبية والصيدلانية.", }, { title: "أدلة مكافحة العدوى", desc: "معايير وإرشادات مكافحة العدوى للمنشآت الصحية.", }, ];
+    html {
+      scroll-behavior: smooth;
+    }
 
-return ( <div className="font-[Tajawal] bg-white text-slate-700" dir="rtl"> {/* Navbar */} <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100 shadow-sm"> <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"> <div className="text-3xl font-black text-slate-800"> مِعيار<span className="text-yellow-500">.</span> </div>
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: var(--white);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.8;
+    }
 
-<div className="hidden md:flex gap-8 font-medium text-slate-700">
-        <a href="#home" className="hover:text-yellow-500 transition">الرئيسية</a>
-        <a href="#services" className="hover:text-yellow-500 transition">الخدمات</a>
-        <a href="#resources" className="hover:text-yellow-500 transition">الموارد</a>
-        <a href="#about" className="hover:text-yellow-500 transition">من نحن</a>
-        <a href="#contact" className="hover:text-yellow-500 transition">تواصل معنا</a>
-      </div>
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-      <a
-        href="#contact"
-        className="bg-slate-800 text-white px-5 py-2 rounded-full hover:scale-105 transition"
-      >
-        استشارة مجانية
-      </a>
-    </div>
-  </nav>
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
 
-  {/* Hero */}
-  <section
-    id="home"
-    className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 text-white"
-  >
-    <div className="absolute inset-0 opacity-20">
-      <div className="absolute w-[700px] h-[700px] bg-yellow-400 rounded-full blur-3xl top-[-200px] left-[-150px] animate-pulse"></div>
-    </div>
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
 
-    <div className="relative max-w-7xl mx-auto px-6 py-28 grid lg:grid-cols-2 gap-16 items-center">
-      <div>
-        <div className="inline-block bg-yellow-500/20 border border-yellow-400/30 text-yellow-300 px-4 py-2 rounded-full mb-6 text-sm">
-          منصة د. علي زيد الغشمي للاستشارات الصحية
-        </div>
+    .logo {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--primary);
+    }
 
-        <h1 className="text-5xl md:text-6xl font-black leading-tight mb-6">
-          شريكك الموثوق
-          <span className="text-yellow-400 block mt-2">
-            في التميز الصحي
-          </span>
-        </h1>
+    .logo span {
+      color: var(--secondary);
+    }
 
-        <p className="text-lg text-slate-300 leading-8 mb-8 max-w-2xl">
-          نقدم حلولًا احترافية للمنشآت الصحية والصيدلانية تشمل الجودة،
-          الاعتماد، التشغيل الطبي، التدريب، وإدارة الأداء وفق أعلى المعايير.
-        </p>
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
 
-        <div className="flex flex-wrap gap-4">
-          <a
-            href="#contact"
-            className="bg-yellow-500 text-slate-900 px-8 py-4 rounded-2xl font-bold hover:scale-105 transition shadow-xl"
-          >
-            اطلب عرض سعر
-          </a>
+    .nav-links a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 700;
+      transition: .3s;
+    }
 
-          <a
-            href="#services"
-            className="border border-white/30 px-8 py-4 rounded-2xl hover:bg-white/10 transition"
-          >
-            استعرض الخدمات
-          </a>
-        </div>
-      </div>
+    .nav-links a:hover {
+      color: var(--secondary);
+    }
 
-      <div className="grid grid-cols-2 gap-5">
-        <div className="bg-white/10 backdrop-blur p-6 rounded-3xl border border-white/10 shadow-2xl">
-          <div className="text-4xl mb-4">🏥</div>
-          <h3 className="text-2xl font-bold mb-2">اعتماد صحي</h3>
-          <p className="text-slate-300 text-sm leading-7">
-            تجهيز المنشآت الطبية للاعتماد المحلي والدولي.
-          </p>
-        </div>
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg,#020617,#0f172a,#1e293b);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
 
-        <div className="bg-white/10 backdrop-blur p-6 rounded-3xl border border-white/10 mt-10 shadow-2xl">
-          <div className="text-4xl mb-4">📋</div>
-          <h3 className="text-2xl font-bold mb-2">سياسات وإجراءات</h3>
-          <p className="text-slate-300 text-sm leading-7">
-            إعداد الأدلة التشغيلية وسياسات الجودة.
-          </p>
-        </div>
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      background: rgba(251,191,36,0.15);
+      border-radius: 50%;
+      top: -250px;
+      left: -250px;
+      filter: blur(60px);
+      animation: pulse 5s infinite;
+    }
 
-        <div className="bg-white/10 backdrop-blur p-6 rounded-3xl border border-white/10 shadow-2xl">
-          <div className="text-4xl mb-4">💊</div>
-          <h3 className="text-2xl font-bold mb-2">استشارات صيدلانية</h3>
-          <p className="text-slate-300 text-sm leading-7">
-            تطوير الأنظمة الدوائية وسلامة استخدام الأدوية.
-          </p>
-        </div>
+    @keyframes pulse {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
 
-        <div className="bg-white/10 backdrop-blur p-6 rounded-3xl border border-white/10 mt-10 shadow-2xl">
-          <div className="text-4xl mb-4">📈</div>
-          <h3 className="text-2xl font-bold mb-2">تحسين الأداء</h3>
-          <p className="text-slate-300 text-sm leading-7">
-            رفع كفاءة المنشآت الصحية وتحسين تجربة المرضى.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+      gap: 60px;
+      align-items: center;
+    }
 
-  {/* Stats */}
-  <section className="bg-slate-900 text-white py-16">
-    <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8 text-center">
-      {stats.map((item, index) => (
-        <div key={index} className="bg-white/5 rounded-3xl p-8 border border-white/5">
-          <h3 className="text-5xl font-black text-yellow-400 mb-3">
-            {item.number}
-          </h3>
-          <p className="text-slate-300 text-lg">{item.label}</p>
-        </div>
-      ))}
-    </div>
-  </section>
+    .hero-text h1 {
+      font-size: 4rem;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      font-weight: 900;
+    }
 
-  {/* Services */}
-  <section id="services" className="py-24 bg-slate-50">
-    <div className="max-w-7xl mx-auto px-6">
-      <div className="text-center mb-16">
-        <h2 className="text-5xl font-black text-slate-800 mb-4">
-          خدماتنا
-        </h2>
-        <p className="text-slate-500 text-lg max-w-2xl mx-auto leading-8">
-          حلول استشارية متقدمة مصممة خصيصًا للقطاع الصحي والصيدلاني.
-        </p>
-      </div>
+    .hero-text h1 span {
+      color: var(--secondary);
+    }
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {services.map((service, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-[30px] p-8 shadow-sm hover:shadow-2xl transition duration-300 border border-slate-100 hover:-translate-y-2"
-          >
-            <div className="text-5xl mb-5">{service.icon}</div>
-            <h3 className="text-2xl font-bold text-slate-800 mb-4">
-              {service.title}
-            </h3>
-            <p className="text-slate-600 leading-8">
-              {service.desc}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #cbd5e1;
+      margin-bottom: 35px;
+    }
 
-  {/* About */}
-  <section id="about" className="py-24 bg-white">
-    <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-      <div>
-        <img
-          src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop"
-          alt="Healthcare"
-          className="rounded-[35px] shadow-2xl w-full object-cover h-[500px]"
-        />
-      </div>
+    .btns {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
 
-      <div>
-        <div className="text-yellow-500 font-bold mb-4 text-lg">
-          من نحن
-        </div>
+    .btn {
+      display: inline-block;
+      padding: 15px 35px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: .3s;
+    }
 
-        <h2 className="text-5xl font-black text-slate-800 leading-tight mb-6">
-          خبرة احترافية في تطوير القطاع الصحي
-        </h2>
+    .btn-primary {
+      background: var(--secondary);
+      color: var(--primary);
+    }
 
-        <p className="text-slate-600 leading-9 text-lg mb-8">
-          نسعى في مِعيار إلى تمكين المنشآت الصحية والصيدلانية من الوصول
-          إلى أعلى مستويات الجودة والامتثال التشغيلي عبر حلول مبتكرة
-          واستشارات متخصصة يقودها خبراء في القطاع الصحي.
-        </p>
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+    }
 
-        <div className="grid grid-cols-2 gap-5">
-          <div className="bg-slate-50 rounded-2xl p-5">
-            <h4 className="font-black text-slate-800 text-xl mb-2">
-              رؤية واضحة
-            </h4>
-            <p className="text-slate-600 text-sm leading-7">
-              بناء منظومة صحية أكثر كفاءة وجودة واستدامة.
-            </p>
-          </div>
+    .btn:hover {
+      transform: translateY(-4px);
+    }
 
-          <div className="bg-slate-50 rounded-2xl p-5">
-            <h4 className="font-black text-slate-800 text-xl mb-2">
-              خبرات متخصصة
-            </h4>
-            <p className="text-slate-600 text-sm leading-7">
-              فريق يضم خبراء في الجودة والاعتماد والتشغيل الطبي.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    .hero-cards {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 20px;
+    }
 
-  {/* Resources */}
-  <section id="resources" className="py-24 bg-slate-50">
-    <div className="max-w-7xl mx-auto px-6">
-      <div className="text-center mb-16">
-        <h2 className="text-5xl font-black text-slate-800 mb-4">
-          الموارد والأدلة
-        </h2>
-        <p className="text-slate-500 text-lg">
-          ملفات وأدلة احترافية لدعم المنشآت الصحية.
-        </p>
-      </div>
+    .card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-      <div className="grid md:grid-cols-3 gap-8">
-        {resources.map((resource, index) => (
-          <div
-            key={index}
-            className="bg-white p-8 rounded-[30px] shadow-sm border border-slate-100 hover:shadow-2xl transition"
-          >
-            <div className="text-4xl mb-5">📁</div>
-            <h3 className="text-2xl font-black text-slate-800 mb-4">
-              {resource.title}
-            </h3>
-            <p className="text-slate-600 leading-8 mb-6">
-              {resource.desc}
-            </p>
+    .card:nth-child(2),
+    .card:nth-child(4) {
+      margin-top: 40px;
+    }
 
-            <button className="bg-slate-800 text-white px-5 py-3 rounded-xl hover:bg-yellow-500 hover:text-slate-900 transition">
-              تحميل الملف
-            </button>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+    .card h3 {
+      margin: 15px 0;
+      font-size: 1.4rem;
+    }
 
-  {/* Contact */}
-  <section id="contact" className="py-24 bg-slate-900 text-white">
-    <div className="max-w-5xl mx-auto px-6 text-center">
-      <h2 className="text-5xl font-black mb-6">
-        ابدأ رحلتك نحو التميز الصحي
-      </h2>
+    section {
+      padding: 100px 0;
+    }
 
-      <p className="text-slate-300 text-lg leading-8 mb-12 max-w-3xl mx-auto">
-        تواصل معنا الآن للحصول على استشارة احترافية مخصصة لمنشأتك الصحية أو الصيدلانية.
-      </p>
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
 
-      <div className="grid md:grid-cols-3 gap-6 mb-12">
-        <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
-          <div className="text-4xl mb-4">📞</div>
-          <h3 className="text-xl font-bold mb-2">الهاتف</h3>
-          <p className="text-slate-300">771441367</p>
-        </div>
+    .section-title h2 {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
 
-        <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
-          <div className="text-4xl mb-4">✉️</div>
-          <h3 className="text-xl font-bold mb-2">البريد الإلكتروني</h3>
-          <p className="text-slate-300">dr.alighashmy@miyaar.sa</p>
-        </div>
+    .services-grid,
+    .resources-grid,
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+      gap: 25px;
+    }
 
-        <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
-          <div className="text-4xl mb-4">📍</div>
-          <h3 className="text-xl font-bold mb-2">الموقع</h3>
-          <p className="text-slate-300">المملكة العربية السعودية</p>
-        </div>
-      </div>
+    .service-box,
+    .resource-box,
+    .stat-box {
+      background: white;
+      border-radius: 30px;
+      padding: 35px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      transition: .3s;
+    }
 
-      <form className="grid md:grid-cols-2 gap-5 text-right">
-        <input
-          type="text"
-          placeholder="الاسم الكامل"
-          className="bg-white/10 border border-white/10 rounded-2xl p-4 outline-none focus:border-yellow-400"
-        />
+    .service-box:hover,
+    .resource-box:hover {
+      transform: translateY(-10px);
+    }
 
-        <input
-          type="email"
-          placeholder="البريد الإلكتروني"
-          className="bg-white/10 border border-white/10 rounded-2xl p-4 outline-none focus:border-yellow-400"
-        />
+    .service-box h3,
+    .resource-box h3 {
+      margin: 15px 0;
+      color: var(--primary);
+    }
 
-        <input
-          type="text"
-          placeholder="اسم المنشأة"
-          className="bg-white/10 border border-white/10 rounded-2xl p-4 outline-none focus:border-yellow-400 md:col-span-2"
-        />
+    .stats {
+      background: var(--primary);
+      color: white;
+    }
 
-        <textarea
-          placeholder="اكتب تفاصيل طلبك"
-          rows="5"
-          className="bg-white/10 border border-white/10 rounded-2xl p-4 outline-none focus:border-yellow-400 md:col-span-2"
-        ></textarea>
+    .stat-box {
+      background: rgba(255,255,255,0.05);
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-        <button className="bg-yellow-500 text-slate-900 py-4 rounded-2xl font-black text-lg hover:scale-[1.02] transition md:col-span-2">
-          إرسال الطلب
-        </button>
-      </form>
-    </div>
-  </section>
+    .stat-box h3 {
+      font-size: 3rem;
+      color: var(--secondary);
+      margin-bottom: 10px;
+    }
 
-  {/* Footer */}
-  <footer className="bg-black text-slate-400 py-8 text-center border-t border-white/5">
-    <div className="max-w-7xl mx-auto px-6">
-      <div className="text-3xl font-black text-white mb-4">
-        مِعيار<span className="text-yellow-500">.</span>
-      </div>
+    .contact {
+      background: linear-gradient(135deg,#020617,#0f172a);
+      color: white;
+    }
 
-      <p className="mb-4">
-        جميع الحقوق محفوظة © 2026 - منصة مِعيار للاستشارات الصحية | د. علي زيد الغشمي
-      </p>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 20px;
+      margin-top: 50px;
+    }
 
-      <div className="flex justify-center gap-6 text-sm">
-        <a href="#" className="hover:text-white transition">
-          سياسة الخصوصية
-        </a>
-        <a href="#" className="hover:text-white transition">
-          الشروط والأحكام
-        </a>
-      </div>
-    </div>
-  </footer>
+    .contact-box {
+      background: rgba(255,255,255,0.05);
+      border-radius: 25px;
+      padding: 30px;
+      text-align: center;
+    }
 
-  {/* WhatsApp */}
-  <a
-    href="https://wa.me/966500000000"
-    className="fixed bottom-6 left-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition z-50"
-  >
-    💬
-  </a>
+    footer {
+      background: black;
+      color: #94a3b8;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .whatsapp {
+      position: fixed;
+      left: 25px;
+      bottom: 25px;
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      text-decoration: none;
+      color: white;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      z-index: 999;
+    }
+
+    @media(max-width:768px){
+      .nav-links {
+        display: none;
+      }
+
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .card:nth-child(2),
+      .card:nth-child(4) {
+        margin-top: 0;
+      }
+    }
+  </style></head>
+<body>  <nav>
+    <div class="container nav-content">
+      <div class="logo">مِعيار<span>.</span></div><ul class="nav-links">
+    <li><a href="#home">الرئيسية</a></li>
+    <li><a href="#services">الخدمات</a></li>
+    <li><a href="#resources">الموارد</a></li>
+    <li><a href="#contact">تواصل معنا</a></li>
+  </ul>
 </div>
 
-); }
+  </nav>  <section class="hero" id="home">
+    <div class="container hero-content"><div class="hero-text">
+    <h1>
+      شريكك الموثوق
+      <span>في التميز الصحي</span>
+    </h1>
+
+    <p>
+      منصة د. علي زيد الغشمي للاستشارات الصحية والجودة والاعتماد الصحي للمنشآت الطبية والصيدلانية في اليمن والخليج.
+    </p>
+
+    <div class="btns">
+      <a href="#contact" class="btn btn-primary">اطلب استشارة</a>
+      <a href="#services" class="btn btn-secondary">استعرض الخدمات</a>
+    </div>
+  </div>
+
+  <div class="hero-cards">
+    <div class="card">
+      <div>🏥</div>
+      <h3>الاعتماد الصحي</h3>
+      <p>تأهيل المنشآت لاعتماد CBAHI وJCI.</p>
+    </div>
+
+    <div class="card">
+      <div>📊</div>
+      <h3>إدارة الجودة</h3>
+      <p>تحسين الجودة والأداء المؤسسي.</p>
+    </div>
+
+    <div class="card">
+      <div>💊</div>
+      <h3>استشارات صيدلانية</h3>
+      <p>حلول احترافية للصيدليات والمنشآت الدوائية.</p>
+    </div>
+
+    <div class="card">
+      <div>⚙️</div>
+      <h3>التشغيل الطبي</h3>
+      <p>رفع كفاءة التشغيل والخدمات الصحية.</p>
+    </div>
+  </div>
+
+</div>
+
+  </section>  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-box">
+          <h3>+250</h3>
+          <p>منشأة صحية</p>
+        </div><div class="stat-box">
+      <h3>+120</h3>
+      <p>مشروع جودة</p>
+    </div>
+
+    <div class="stat-box">
+      <h3>95%</h3>
+      <p>رضا العملاء</p>
+    </div>
+
+    <div class="stat-box">
+      <h3>+15</h3>
+      <p>خبير واستشاري</p>
+    </div>
+  </div>
+</div>
+
+  </section>  <section id="services">
+    <div class="container"><div class="section-title">
+    <h2>خدماتنا</h2>
+    <p>حلول استشارية متخصصة للقطاع الصحي.</p>
+  </div>
+
+  <div class="services-grid">
+
+    <div class="service-box">
+      <div>🏥</div>
+      <h3>الاعتماد الصحي</h3>
+      <p>تجهيز المنشآت للاعتماد المحلي والدولي.</p>
+    </div>
+
+    <div class="service-box">
+      <div>📋</div>
+      <h3>السياسات والإجراءات</h3>
+      <p>إعداد الأدلة التشغيلية وسياسات الجودة.</p>
+    </div>
+
+    <div class="service-box">
+      <div>💉</div>
+      <h3>سلامة المرضى</h3>
+      <p>رفع معايير السلامة وتقليل المخاطر.</p>
+    </div>
+
+    <div class="service-box">
+      <div>🎓</div>
+      <h3>التدريب الصحي</h3>
+      <p>برامج تدريب وتأهيل للكوادر الطبية.</p>
+    </div>
+
+    <div class="service-box">
+      <div>📈</div>
+      <h3>تحسين الأداء</h3>
+      <p>رفع كفاءة الخدمات الصحية والإدارية.</p>
+    </div>
+
+    <div class="service-box">
+      <div>✅</div>
+      <h3>التفتيش والتقييم</h3>
+      <p>تقييم شامل للامتثال والجودة.</p>
+    </div>
+
+  </div>
+
+</div>
+
+  </section>  <section id="resources" style="background:#f8fafc;">
+    <div class="container"><div class="section-title">
+    <h2>الموارد والأدلة</h2>
+    <p>ملفات وأدلة احترافية للمنشآت الصحية.</p>
+  </div>
+
+  <div class="resources-grid">
+
+    <div class="resource-box">
+      <h3>دليل الاعتماد الصحي</h3>
+      <p>أحدث متطلبات الاعتماد الصحي للمنشآت الطبية.</p>
+    </div>
+
+    <div class="resource-box">
+      <h3>نماذج الجودة</h3>
+      <p>قوالب احترافية للسياسات والإجراءات الطبية.</p>
+    </div>
+
+    <div class="resource-box">
+      <h3>أدلة مكافحة العدوى</h3>
+      <p>معايير مكافحة العدوى وسلامة المرضى.</p>
+    </div>
+
+  </div>
+
+</div>
+
+  </section>  <section class="contact" id="contact">
+    <div class="container"><div class="section-title">
+    <h2 style="color:white;">تواصل معنا</h2>
+    <p style="color:#cbd5e1;">ابدأ رحلتك نحو التميز الصحي الآن.</p>
+  </div>
+
+  <div class="contact-grid">
+
+    <div class="contact-box">
+      <h3>👨‍⚕️ الاسم</h3>
+      <p>د. علي زيد الغشمي</p>
+    </div>
+
+    <div class="contact-box">
+      <h3>📞 الهاتف</h3>
+      <p>771441367</p>
+    </div>
+
+    <div class="contact-box">
+      <h3>📍 الموقع</h3>
+      <p>اليمن - صنعاء</p>
+    </div>
+
+  </div>
+
+</div>
+
+  </section>  <footer>
+    <h2 style="margin-bottom:10px;color:white;">مِعيار.</h2>
+    <p>
+      جميع الحقوق محفوظة © 2026 | د. علي زيد الغشمي
+    </p>
+  </footer><a href="https://wa.me/967771441367" class="whatsapp">💬</a>
+
+</body>
+</html>
