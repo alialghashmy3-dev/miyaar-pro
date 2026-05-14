@@ -1,118 +1,329 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="منصة معيار للاستشارات الصحية - بإدارة د. علي زيد الغشمي">
-    <title>منصة معيار | د. علي زيد الغشمي</title>
-    <style>
-        :root {
-            --primary: #0061ff;
-            --secondary: #212529;
-            --bg-light: #f8f9fa;
-            --white: #ffffff;
-            --shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
+export default function MiyaarPlatform() { const services = [ { title: "الاعتماد الصحي", desc: "دعم المنشآت الصحية للحصول على اعتماد CBAHI وJCI بأعلى المعايير.", icon: "🏥", }, { title: "إدارة الجودة", desc: "تطبيق أنظمة الجودة الطبية والصيدلانية وتحسين الأداء المؤسسي.", icon: "📊", }, { title: "التشغيل الطبي", desc: "تطوير الخطط التشغيلية وإدارة الموارد الطبية بكفاءة.", icon: "⚙️", }, { title: "الاستشارات الصيدلانية", desc: "حلول متكاملة للصيدليات والمستودعات الدوائية والامتثال التنظيمي.", icon: "💊", }, { title: "التدريب الصحي", desc: "برامج تدريبية متخصصة للكوادر الصحية والإدارية.", icon: "🎓", }, { title: "التفتيش والتقييم", desc: "عمليات تدقيق وتقييم احترافية لرفع جودة الخدمات الصحية.", icon: "✅", }, ];
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: var(--bg-light); color: var(--secondary); line-height: 1.6; }
+const stats = [ { number: "+250", label: "منشأة صحية" }, { number: "+120", label: "مشروع جودة" }, { number: "+95%", label: "نسبة رضا العملاء" }, { number: "+15", label: "خبير واستشاري" }, ];
 
-        nav {
-            background: var(--white);
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: var(--shadow);
-        }
-        .logo { font-size: 1.3rem; font-weight: bold; color: var(--primary); text-decoration: none; }
-        .nav-links { display: flex; list-style: none; gap: 20px; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--secondary); font-weight: 500; }
-        .btn-consult { background: var(--primary); color: var(--white) !important; padding: 8px 20px; border-radius: 25px; }
+const resources = [ { title: "دليل الاعتماد الصحي", desc: "أحدث متطلبات الاعتماد الصحي للمنشآت الطبية في السعودية.", }, { title: "نماذج سياسات الجودة", desc: "قوالب احترافية للسياسات والإجراءات الطبية والصيدلانية.", }, { title: "أدلة مكافحة العدوى", desc: "معايير وإرشادات مكافحة العدوى للمنشآت الصحية.", }, ];
 
-        .hero { padding: 150px 5% 80px; background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%); text-align: center; }
-        .container { padding: 60px 5%; }
-        .section-title { text-align: center; margin-bottom: 50px; }
-        .section-title h2 { font-size: 2rem; color: var(--primary); }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: var(--white); padding: 30px; border-radius: 15px; box-shadow: var(--shadow); transition: 0.3s; text-align: center; }
-        .card:hover { transform: translateY(-10px); }
+return ( <div className="font-[Tajawal] bg-white text-slate-700" dir="rtl"> {/* Navbar */} <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100 shadow-sm"> <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"> <div className="text-3xl font-black text-slate-800"> مِعيار<span className="text-yellow-500">.</span> </div>
 
-        .consult-form { max-width: 600px; margin: 0 auto; background: var(--white); padding: 30px; border-radius: 20px; box-shadow: var(--shadow); }
-        .form-group { margin-bottom: 15px; text-align: right; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
-        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; }
-        
-        .submit-btn { background: #25D366; color: white; border: none; padding: 15px; width: 100%; border-radius: 10px; cursor: pointer; font-weight: bold; font-size: 1.1rem; }
+<div className="hidden md:flex gap-8 font-medium text-slate-700">
+        <a href="#home" className="hover:text-yellow-500 transition">الرئيسية</a>
+        <a href="#services" className="hover:text-yellow-500 transition">الخدمات</a>
+        <a href="#resources" className="hover:text-yellow-500 transition">الموارد</a>
+        <a href="#about" className="hover:text-yellow-500 transition">من نحن</a>
+        <a href="#contact" className="hover:text-yellow-500 transition">تواصل معنا</a>
+      </div>
 
-        footer { background: var(--secondary); color: white; padding: 40px 5%; text-align: center; }
+      <a
+        href="#contact"
+        className="bg-slate-800 text-white px-5 py-2 rounded-full hover:scale-105 transition"
+      >
+        استشارة مجانية
+      </a>
+    </div>
+  </nav>
 
-        @media (max-width: 768px) { .nav-links { display: none; } }
-    </style>
-</head>
-<body>
-
-    <nav>
-        <a href="#" class="logo">معيار | د. علي زيد الغشمي</a>
-        <ul class="nav-links">
-            <li><a href="#services">الخدمات</a></li>
-            <li><a href="#pricing">الباقات</a></li>
-            <li><a href="#consult" class="btn-consult">تواصل معنا</a></li>
-        </ul>
-    </nav>
-
-    <section class="hero">
-        <h1>منصة معيار للاستشارات الطبية</h1>
-        <p>بإشراف د. علي زيد الغشمي - خبير الجودة والتراخيص الصحية في اليمن[span_1](start_span)[span_1](end_span)</p>
-    </section>
-
-    <!-- قسم الخبراء -->
-    <div class="container" id="experts">
-        <div class="section-title"><h2>مستشار المنصة</h2></div>
-        <div class="grid" style="justify-content: center; display: flex;">
-            <div class="card" style="width: 350px;">
-                <div style="font-size: 4rem; margin-bottom: 15px;">🩺</div>
-                <h3>د. علي زيد الغشمي[span_2](start_span)[span_2](end_span)</h3>
-                <p style="color: var(--primary); font-weight: bold; margin-bottom: 10px;">خبير إدارة وجودة صحية[span_3](start_span)[span_3](end_span)</p>
-                <p style="font-size: 0.9rem; color: #666;">متخصص في تطوير المنشآت الطبية ومعايير الاعتماد اليمني[span_4](start_span)[span_4](end_span).</p>
-            </div>
-        </div>
+  {/* Hero */}
+  <section
+    id="home"
+    className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 text-white"
+  >
+    <div className="absolute inset-0 opacity-20">
+      <div className="absolute w-[700px] h-[700px] bg-yellow-400 rounded-full blur-3xl top-[-200px] left-[-150px] animate-pulse"></div>
     </div>
 
-    <!-- قسم طلب الاستشارة -->
-    <div class="container" id="consult">
-        <div class="section-title"><h2>تواصل مباشر</h2></div>
-        <div class="consult-form">
-            <div class="form-group"><label>اسم المنشأة</label><input type="text" id="cName"></div>
-            <div class="form-group"><label>نوع الخدمة</label>
-                <select id="cType">
-                    <option value="ترخيص">ترخيص طبي[span_5](start_span)[span_5](end_span)</option>
-                    <option value="جودة">تطبيق معايير جودة[span_6](start_span)[span_6](end_span)</option>
-                    <option value="تفتيش">تفتيش وتقييم[span_7](start_span)[span_7](end_span)</option>
-                </select>
-            </div>
-            <button class="submit-btn" onclick="sendConsult()">ارسل رسالة لـ د. علي زيد الغشمي[span_8](start_span)[span_8](end_span)</button>
+    <div className="relative max-w-7xl mx-auto px-6 py-28 grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <div className="inline-block bg-yellow-500/20 border border-yellow-400/30 text-yellow-300 px-4 py-2 rounded-full mb-6 text-sm">
+          منصة د. علي زيد الغشمي للاستشارات الصحية
         </div>
+
+        <h1 className="text-5xl md:text-6xl font-black leading-tight mb-6">
+          شريكك الموثوق
+          <span className="text-yellow-400 block mt-2">
+            في التميز الصحي
+          </span>
+        </h1>
+
+        <p className="text-lg text-slate-300 leading-8 mb-8 max-w-2xl">
+          نقدم حلولًا احترافية للمنشآت الصحية والصيدلانية تشمل الجودة،
+          الاعتماد، التشغيل الطبي، التدريب، وإدارة الأداء وفق أعلى المعايير.
+        </p>
+
+        <div className="flex flex-wrap gap-4">
+          <a
+            href="#contact"
+            className="bg-yellow-500 text-slate-900 px-8 py-4 rounded-2xl font-bold hover:scale-105 transition shadow-xl"
+          >
+            اطلب عرض سعر
+          </a>
+
+          <a
+            href="#services"
+            className="border border-white/30 px-8 py-4 rounded-2xl hover:bg-white/10 transition"
+          >
+            استعرض الخدمات
+          </a>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-2 gap-5">
+        <div className="bg-white/10 backdrop-blur p-6 rounded-3xl border border-white/10 shadow-2xl">
+          <div className="text-4xl mb-4">🏥</div>
+          <h3 className="text-2xl font-bold mb-2">اعتماد صحي</h3>
+          <p className="text-slate-300 text-sm leading-7">
+            تجهيز المنشآت الطبية للاعتماد المحلي والدولي.
+          </p>
+        </div>
+
+        <div className="bg-white/10 backdrop-blur p-6 rounded-3xl border border-white/10 mt-10 shadow-2xl">
+          <div className="text-4xl mb-4">📋</div>
+          <h3 className="text-2xl font-bold mb-2">سياسات وإجراءات</h3>
+          <p className="text-slate-300 text-sm leading-7">
+            إعداد الأدلة التشغيلية وسياسات الجودة.
+          </p>
+        </div>
+
+        <div className="bg-white/10 backdrop-blur p-6 rounded-3xl border border-white/10 shadow-2xl">
+          <div className="text-4xl mb-4">💊</div>
+          <h3 className="text-2xl font-bold mb-2">استشارات صيدلانية</h3>
+          <p className="text-slate-300 text-sm leading-7">
+            تطوير الأنظمة الدوائية وسلامة استخدام الأدوية.
+          </p>
+        </div>
+
+        <div className="bg-white/10 backdrop-blur p-6 rounded-3xl border border-white/10 mt-10 shadow-2xl">
+          <div className="text-4xl mb-4">📈</div>
+          <h3 className="text-2xl font-bold mb-2">تحسين الأداء</h3>
+          <p className="text-slate-300 text-sm leading-7">
+            رفع كفاءة المنشآت الصحية وتحسين تجربة المرضى.
+          </p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <footer>
-        <p>د. علي زيد الغشمي | منصة معيار للاستشارات الصحية[span_9](start_span)[span_9](end_span)</p>
-        <p dir="ltr">771441367[span_10](start_span)[span_10](end_span)</p>
-        <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.6;">&copy; 2026 جميع الحقوق محفوظة</p>
-    </footer>
+  {/* Stats */}
+  <section className="bg-slate-900 text-white py-16">
+    <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8 text-center">
+      {stats.map((item, index) => (
+        <div key={index} className="bg-white/5 rounded-3xl p-8 border border-white/5">
+          <h3 className="text-5xl font-black text-yellow-400 mb-3">
+            {item.number}
+          </h3>
+          <p className="text-slate-300 text-lg">{item.label}</p>
+        </div>
+      ))}
+    </div>
+  </section>
 
-    <script>
-        function sendConsult() {
-            const name = document.getElementById('cName').value || "غير محدد";
-            const type = document.getElementById('cType').value;
-            const text = `*طلب استشارة من منصة معيار*%0Aالمنشأة: ${name}%0Aالخدمة المطلوبة: ${type}%0Aارغب في التواصل مع د. علي زيد الغشمي`;
-            window.open(`https://wa.me/967771441367?text=${text}`, '_blank'); //[span_11](start_span)[span_11](end_span)
-        }
-    </script>
-</body>
-</html>
+  {/* Services */}
+  <section id="services" className="py-24 bg-slate-50">
+    <div className="max-w-7xl mx-auto px-6">
+      <div className="text-center mb-16">
+        <h2 className="text-5xl font-black text-slate-800 mb-4">
+          خدماتنا
+        </h2>
+        <p className="text-slate-500 text-lg max-w-2xl mx-auto leading-8">
+          حلول استشارية متقدمة مصممة خصيصًا للقطاع الصحي والصيدلاني.
+        </p>
+      </div>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map((service, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-[30px] p-8 shadow-sm hover:shadow-2xl transition duration-300 border border-slate-100 hover:-translate-y-2"
+          >
+            <div className="text-5xl mb-5">{service.icon}</div>
+            <h3 className="text-2xl font-bold text-slate-800 mb-4">
+              {service.title}
+            </h3>
+            <p className="text-slate-600 leading-8">
+              {service.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* About */}
+  <section id="about" className="py-24 bg-white">
+    <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <img
+          src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop"
+          alt="Healthcare"
+          className="rounded-[35px] shadow-2xl w-full object-cover h-[500px]"
+        />
+      </div>
+
+      <div>
+        <div className="text-yellow-500 font-bold mb-4 text-lg">
+          من نحن
+        </div>
+
+        <h2 className="text-5xl font-black text-slate-800 leading-tight mb-6">
+          خبرة احترافية في تطوير القطاع الصحي
+        </h2>
+
+        <p className="text-slate-600 leading-9 text-lg mb-8">
+          نسعى في مِعيار إلى تمكين المنشآت الصحية والصيدلانية من الوصول
+          إلى أعلى مستويات الجودة والامتثال التشغيلي عبر حلول مبتكرة
+          واستشارات متخصصة يقودها خبراء في القطاع الصحي.
+        </p>
+
+        <div className="grid grid-cols-2 gap-5">
+          <div className="bg-slate-50 rounded-2xl p-5">
+            <h4 className="font-black text-slate-800 text-xl mb-2">
+              رؤية واضحة
+            </h4>
+            <p className="text-slate-600 text-sm leading-7">
+              بناء منظومة صحية أكثر كفاءة وجودة واستدامة.
+            </p>
+          </div>
+
+          <div className="bg-slate-50 rounded-2xl p-5">
+            <h4 className="font-black text-slate-800 text-xl mb-2">
+              خبرات متخصصة
+            </h4>
+            <p className="text-slate-600 text-sm leading-7">
+              فريق يضم خبراء في الجودة والاعتماد والتشغيل الطبي.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Resources */}
+  <section id="resources" className="py-24 bg-slate-50">
+    <div className="max-w-7xl mx-auto px-6">
+      <div className="text-center mb-16">
+        <h2 className="text-5xl font-black text-slate-800 mb-4">
+          الموارد والأدلة
+        </h2>
+        <p className="text-slate-500 text-lg">
+          ملفات وأدلة احترافية لدعم المنشآت الصحية.
+        </p>
+      </div>
+
+      <div className="grid md:grid-cols-3 gap-8">
+        {resources.map((resource, index) => (
+          <div
+            key={index}
+            className="bg-white p-8 rounded-[30px] shadow-sm border border-slate-100 hover:shadow-2xl transition"
+          >
+            <div className="text-4xl mb-5">📁</div>
+            <h3 className="text-2xl font-black text-slate-800 mb-4">
+              {resource.title}
+            </h3>
+            <p className="text-slate-600 leading-8 mb-6">
+              {resource.desc}
+            </p>
+
+            <button className="bg-slate-800 text-white px-5 py-3 rounded-xl hover:bg-yellow-500 hover:text-slate-900 transition">
+              تحميل الملف
+            </button>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* Contact */}
+  <section id="contact" className="py-24 bg-slate-900 text-white">
+    <div className="max-w-5xl mx-auto px-6 text-center">
+      <h2 className="text-5xl font-black mb-6">
+        ابدأ رحلتك نحو التميز الصحي
+      </h2>
+
+      <p className="text-slate-300 text-lg leading-8 mb-12 max-w-3xl mx-auto">
+        تواصل معنا الآن للحصول على استشارة احترافية مخصصة لمنشأتك الصحية أو الصيدلانية.
+      </p>
+
+      <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
+          <div className="text-4xl mb-4">📞</div>
+          <h3 className="text-xl font-bold mb-2">الهاتف</h3>
+          <p className="text-slate-300">771441367</p>
+        </div>
+
+        <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
+          <div className="text-4xl mb-4">✉️</div>
+          <h3 className="text-xl font-bold mb-2">البريد الإلكتروني</h3>
+          <p className="text-slate-300">dr.alighashmy@miyaar.sa</p>
+        </div>
+
+        <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
+          <div className="text-4xl mb-4">📍</div>
+          <h3 className="text-xl font-bold mb-2">الموقع</h3>
+          <p className="text-slate-300">المملكة العربية السعودية</p>
+        </div>
+      </div>
+
+      <form className="grid md:grid-cols-2 gap-5 text-right">
+        <input
+          type="text"
+          placeholder="الاسم الكامل"
+          className="bg-white/10 border border-white/10 rounded-2xl p-4 outline-none focus:border-yellow-400"
+        />
+
+        <input
+          type="email"
+          placeholder="البريد الإلكتروني"
+          className="bg-white/10 border border-white/10 rounded-2xl p-4 outline-none focus:border-yellow-400"
+        />
+
+        <input
+          type="text"
+          placeholder="اسم المنشأة"
+          className="bg-white/10 border border-white/10 rounded-2xl p-4 outline-none focus:border-yellow-400 md:col-span-2"
+        />
+
+        <textarea
+          placeholder="اكتب تفاصيل طلبك"
+          rows="5"
+          className="bg-white/10 border border-white/10 rounded-2xl p-4 outline-none focus:border-yellow-400 md:col-span-2"
+        ></textarea>
+
+        <button className="bg-yellow-500 text-slate-900 py-4 rounded-2xl font-black text-lg hover:scale-[1.02] transition md:col-span-2">
+          إرسال الطلب
+        </button>
+      </form>
+    </div>
+  </section>
+
+  {/* Footer */}
+  <footer className="bg-black text-slate-400 py-8 text-center border-t border-white/5">
+    <div className="max-w-7xl mx-auto px-6">
+      <div className="text-3xl font-black text-white mb-4">
+        مِعيار<span className="text-yellow-500">.</span>
+      </div>
+
+      <p className="mb-4">
+        جميع الحقوق محفوظة © 2026 - منصة مِعيار للاستشارات الصحية | د. علي زيد الغشمي
+      </p>
+
+      <div className="flex justify-center gap-6 text-sm">
+        <a href="#" className="hover:text-white transition">
+          سياسة الخصوصية
+        </a>
+        <a href="#" className="hover:text-white transition">
+          الشروط والأحكام
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  {/* WhatsApp */}
+  <a
+    href="https://wa.me/966500000000"
+    className="fixed bottom-6 left-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition z-50"
+  >
+    💬
+  </a>
+</div>
+
+); }
